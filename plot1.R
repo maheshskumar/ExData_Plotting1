@@ -1,0 +1,5 @@
+powerConsumpData <- read.table(file="household_power_consumption.txt", sep=";", header = TRUE, na.strings = "?")
+powerConsumpSubset <- subset(powerConsumpData, powerConsumpData$Date=="1/2/2007" | powerConsumpData$Date =="2/2/2007" )
+head(powerConsumpSubset)
+rm(powerConsumpData)
+hist(powerConsumpSubset$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)", ylab = "Frequency")
